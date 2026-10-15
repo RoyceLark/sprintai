@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 90px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 90px);
+  gap: 2px;
+  background: #0f0f17;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 1.6rem;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-radius: 8px;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.calculator-grid > button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.calculator-grid > button:active {
+  transform: scale(0.97);
+}
+
+.calculator-grid > button[data-operation],
+.calculator-grid > button[data-equals] {
+  background: linear-gradient(135deg, #ff6a3d, #ff8e53);
+}
+
+.calculator-grid > button[data-all-clear],
+.calculator-grid > button[data-delete] {
+  background: linear-gradient(135deg, #2193b0, #6dd5ed);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+  border-radius: 8px;
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+}
+
+.output .current-operand {
+  color: #fff;
+  font-size: 2.2rem;
+}
