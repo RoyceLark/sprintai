@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand &mdash; Build something great, faster.</title>
+  <meta name="description" content="A clean, modern, and reusable website template with a consistent design system that looks great on any device." />
+  <link rel="stylesheet" href="/src/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#home">Brand</a>
+
+      <button
+        id="nav-toggle"
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav id="primary-nav" class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <h1>Build something great, faster.</h1>
+        <p class="hero-subtitle">
+          A clean, modern, and reusable website template with a consistent
+          design system that looks great on any device.
+        </p>
+        <a class="btn btn-primary" href="#contact">Get Started</a>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <h2 class="section-title">Features</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Responsive Layout</h3>
+            <p>Looks great on desktop, tablet, and mobile devices out of the box.</p>
+          </article>
+          <article class="card">
+            <h3>Reusable Components</h3>
+            <p>Buttons, cards, and navigation built with a consistent design system.</p>
+          </article>
+          <article class="card">
+            <h3>Accessible by Default</h3>
+            <p>Semantic HTML, keyboard support, and sensible color contrast.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-alt">
+      <div class="container about-inner">
+        <div class="about-media" aria-hidden="true">
+          <div class="about-media-card">
+            <span class="avatar"></span>
+            <span class="line line-long"></span>
+            <span class="line line-short"></span>
+          </div>
+        </div>
+        <h2 class="section-title">About This Template</h2>
+        <p>
+          This template provides a solid foundation for building modern
+          websites: a header with navigation, a hero section, content
+          sections, a call-to-action, and a footer - all styled with a
+          shared set of design tokens for color, typography, and spacing.
+        </p>
+      </div>
+    </section>
+
+    <section id="cta" class="cta">
+      <div class="container cta-inner">
+        <h2>Ready to get started?</h2>
+        <p>Join today and launch your site faster.</p>
+        <a class="btn btn-secondary" href="#contact">Contact Us</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Brand. All rights reserved.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
