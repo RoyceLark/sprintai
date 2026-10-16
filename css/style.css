@@ -1,0 +1,361 @@
+/* ========== Base & Variables ========== */
+:root {
+  --color-primary: #a85d72;
+  --color-primary-dark: #8a4a5e;
+  --color-bg-alt: #fdf1f2;
+  --color-text: #333333;
+  --color-border: #e5c9ce;
+  --max-width: 1200px;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin: 0 0 0.5em;
+  color: var(--color-primary-dark);
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.section--alt {
+  background: var(--color-bg-alt);
+}
+
+.section__title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: var(--color-primary-dark);
+}
+
+/* ========== Header / Nav ========== */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  z-index: 100;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.logo__accent {
+  color: var(--color-primary);
+}
+
+.nav__list {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  color: var(--color-text);
+  font-weight: 500;
+  padding: 4px 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav__link.is-active,
+.nav__link:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-toggle__bar {
+  width: 24px;
+  height: 2px;
+  background: var(--color-text);
+}
+
+/* ========== Hero ========== */
+.hero {
+  text-align: center;
+  background: linear-gradient(135deg, #fde3e7, #fcebec);
+}
+
+.hero__subtitle {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+/* ========== About ========== */
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about__image {
+  background: #f4dade;
+  border-radius: var(--radius);
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+/* ========== Card grids (services / pricing / testimonials) ========== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.service-card,
+.price-card,
+.testimonial-card {
+  background: var(--color-bg-alt);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+}
+
+.service-card__icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 12px;
+}
+
+.price-card__price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.price-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #555;
+}
+
+.price-card--featured {
+  border: 2px solid var(--color-primary);
+}
+
+.testimonial-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.testimonial-card {
+  text-align: left;
+}
+
+.testimonial-card cite {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--color-primary-dark);
+}
+
+/* ========== Gallery ========== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.gallery-grid__item {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
+  display: block;
+  object-fit: cover;
+}
+
+/* ========== Contact ========== */
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.enquiry-form {
+  background: var(--color-bg-alt);
+  padding: 24px;
+  border-radius: var(--radius);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group input.is-invalid,
+.form-group select.is-invalid,
+.form-group textarea.is-invalid {
+  border-color: #c0392b;
+}
+
+.form-error {
+  display: block;
+  color: #c0392b;
+  font-size: 0.85rem;
+  min-height: 1.1em;
+}
+
+.form-success {
+  margin-top: 16px;
+  color: #1f7a3d;
+  font-weight: 600;
+}
+
+/* ========== Footer ========== */
+.site-footer {
+  background: #2e2024;
+  color: #f1dfe2;
+  text-align: center;
+  padding: 24px 0;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .about__grid,
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid,
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    display: none;
+  }
+
+  .nav.is-open {
+    display: block;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 20px;
+  }
+
+  .nav__list li {
+    border-bottom: 1px solid #f0e0e2;
+  }
+
+  .nav__link {
+    display: block;
+    padding: 12px 0;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .card-grid,
+  .testimonial-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}

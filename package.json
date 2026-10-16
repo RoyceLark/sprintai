@@ -1,0 +1,16 @@
+{
+  "name": "rich-salon-website",
+  "version": "1.0.0",
+  "description": "Rich Salon - a static marketing website (HTML, CSS, JavaScript).",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jsdom": "^24.0.0"
+  },
+  "jest": {
+    "testPathIgnorePatterns": ["/node_modules/", "\\.sprintflow-e2e/"]
+  }
+}
