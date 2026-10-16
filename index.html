@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rich Salon - Premium Hair, Skin &amp; Spa Care</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#home" class="logo">Rich<span class="logo__accent">Salon</span></a>
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list" id="navList">
+          <li><a href="#home" class="nav__link" data-section="home">Home</a></li>
+          <li><a href="#about" class="nav__link" data-section="about">About Us</a></li>
+          <li><a href="#services" class="nav__link" data-section="services">Services</a></li>
+          <li><a href="#pricing" class="nav__link" data-section="pricing">Pricing</a></li>
+          <li><a href="#gallery" class="nav__link" data-section="gallery">Gallery</a></li>
+          <li><a href="#testimonials" class="nav__link" data-section="testimonials">Testimonials</a></li>
+          <li><a href="#contact" class="nav__link" data-section="contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navList">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero__inner">
+        <h1>Welcome to Rich Salon</h1>
+        <p>Where beauty meets elegance. Premium hair, skin and spa care for everyone.</p>
+        <a href="#contact" class="btn btn--primary">Book an Appointment</a>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container about__inner">
+        <img class="about__image" src="images/about-salon.svg" alt="Rich Salon interior" width="480" height="320">
+        <div class="about__content">
+          <h2>About Us</h2>
+          <p>Rich Salon has been serving the community for over 10 years, providing expert hair styling, skincare and spa treatments in a relaxing, modern environment. Our skilled team is dedicated to helping you look and feel your best.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="container">
+        <h2>Our Services</h2>
+        <div class="card-grid">
+          <article class="card">
+            <img class="card__image" src="images/service-haircut.svg" alt="Hair styling service" width="320" height="120">
+            <h3>Hair Styling</h3>
+            <p>Cuts, coloring and styling tailored to your look.</p>
+          </article>
+          <article class="card">
+            <img class="card__image" src="images/service-facial.svg" alt="Facial and skin care service" width="320" height="120">
+            <h3>Facial &amp; Skin Care</h3>
+            <p>Deep cleansing, rejuvenating facials for glowing skin.</p>
+          </article>
+          <article class="card">
+            <img class="card__image" src="images/service-massage.svg" alt="Spa and massage service" width="320" height="120">
+            <h3>Spa &amp; Massage</h3>
+            <p>Relaxing massages and spa therapies to unwind.</p>
+          </article>
+          <article class="card">
+            <img class="card__image" src="images/service-nails.svg" alt="Nail care service" width="320" height="120">
+            <h3>Nail Care</h3>
+            <p>Manicure, pedicure and nail art by skilled technicians.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+      <div class="container">
+        <h2>Pricing</h2>
+        <div class="card-grid">
+          <article class="price-card">
+            <h3>Haircut &amp; Styling</h3>
+            <p class="price-card__price">$25</p>
+            <ul>
+              <li>Wash &amp; cut</li>
+              <li>Blow dry</li>
+              <li>Styling</li>
+            </ul>
+          </article>
+          <article class="price-card price-card--featured">
+            <h3>Facial Treatment</h3>
+            <p class="price-card__price">$40</p>
+            <ul>
+              <li>Deep cleansing</li>
+              <li>Face mask</li>
+              <li>Moisturizing</li>
+            </ul>
+          </article>
+          <article class="price-card">
+            <h3>Full Body Massage</h3>
+            <p class="price-card__price">$55</p>
+            <ul>
+              <li>60 minute session</li>
+              <li>Aromatherapy oils</li>
+            </ul>
+          </article>
+          <article class="price-card">
+            <h3>Manicure &amp; Pedicure</h3>
+            <p class="price-card__price">$30</p>
+            <ul>
+              <li>Nail shaping</li>
+              <li>Polish</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <h2>Gallery</h2>
+        <div class="gallery__grid">
+          <img class="gallery__item" src="images/gallery-interior.svg" alt="Salon interior" width="320" height="180">
+          <img class="gallery__item" src="images/gallery-station.svg" alt="Styling station" width="320" height="180">
+          <img class="gallery__item" src="images/gallery-spa.svg" alt="Spa room" width="320" height="180">
+          <img class="gallery__item" src="images/gallery-washbar.svg" alt="Hair wash bar" width="320" height="180">
+          <img class="gallery__item" src="images/gallery-nails.svg" alt="Nail studio" width="320" height="180">
+          <img class="gallery__item" src="images/gallery-reception.svg" alt="Reception area" width="320" height="180">
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <h2>Testimonials</h2>
+        <div class="testimonial-grid">
+          <blockquote class="testimonial-card">
+            <p>"Relaxing atmosphere and very professional staff."</p>
+            <footer>&mdash; Jane D.</footer>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <p>"Best haircut I've had in years. Highly recommend Rich Salon!"</p>
+            <footer>&mdash; Priya K.</footer>
+          </blockquote>
+          <blockquote class="testimonial-card">
+            <p>"The spa treatment left me feeling completely renewed."</p>
+            <footer>&mdash; Maria S.</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container contact__inner">
+        <div class="contact__info">
+          <h2>Contact Us</h2>
+          <p>123 Beauty Lane, Springfield</p>
+          <p>Phone: <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+          <p>Email: <a href="mailto:hello@richsalon.example">hello@richsalon.example</a></p>
+        </div>
+        <div class="contact__form-wrap">
+          <h3>Book an Appointment</h3>
+          <form id="enquiryForm" class="form" novalidate>
+            <div class="form__group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+              <span class="form__error" id="nameError" role="alert"></span>
+            </div>
+            <div class="form__group">
+              <label for="contactInfo">Email or Phone</label>
+              <input type="text" id="contactInfo" name="contactInfo" required>
+              <span class="form__error" id="contactInfoError" role="alert"></span>
+            </div>
+            <div class="form__group">
+              <label for="service">Service</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="haircut">Haircut &amp; Styling</option>
+                <option value="facial">Facial Treatment</option>
+                <option value="massage">Full Body Massage</option>
+                <option value="manicure">Manicure &amp; Pedicure</option>
+              </select>
+              <span class="form__error" id="serviceError" role="alert"></span>
+            </div>
+            <div class="form__group">
+              <label for="date">Preferred Date</label>
+              <input type="date" id="date" name="date" required>
+              <span class="form__error" id="dateError" role="alert"></span>
+            </div>
+            <div class="form__group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">Send Enquiry</button>
+            <p class="form__success" id="formSuccess" role="status" hidden>Thank you! Your enquiry has been sent. We'll get back to you soon.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Rich Salon. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/validation.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
