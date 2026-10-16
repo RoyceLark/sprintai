@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Bella Salon</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Bella Salon</a>
+      <nav class="main-nav">
+        <a href="index.html">Back to Site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <div class="container">
+      <h1 id="dashboard-title">Admin Dashboard</h1>
+
+      <section class="dashboard-summary" aria-label="Summary">
+        <div class="summary-card">
+          <h2>Total Bookings</h2>
+          <p class="summary-value" id="total-bookings">24</p>
+        </div>
+        <div class="summary-card">
+          <h2>Active Services</h2>
+          <p class="summary-value" id="active-services">4</p>
+        </div>
+        <div class="summary-card">
+          <h2>Revenue (This Month)</h2>
+          <p class="summary-value" id="revenue">$3,250</p>
+        </div>
+      </section>
+
+      <section class="dashboard-bookings">
+        <h2>Recent Bookings</h2>
+        <div class="table-responsive">
+        <table class="bookings-table">
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Service</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jane Doe</td>
+              <td>Haircut &amp; Styling</td>
+              <td>2026-10-14</td>
+              <td class="status status-confirmed">Confirmed</td>
+            </tr>
+            <tr>
+              <td>Mary Smith</td>
+              <td>Coloring</td>
+              <td>2026-10-15</td>
+              <td class="status status-pending">Pending</td>
+            </tr>
+            <tr>
+              <td>Alex Brown</td>
+              <td>Manicure &amp; Pedicure</td>
+              <td>2026-10-16</td>
+              <td class="status status-confirmed">Confirmed</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Bella Salon. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

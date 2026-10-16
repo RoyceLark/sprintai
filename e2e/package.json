@@ -1,0 +1,13 @@
+{
+  "name": "bella-salon-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "End-to-end tests for the Bella Salon static website",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.0",
+    "http-server": "^14.1.1"
+  }
+}
