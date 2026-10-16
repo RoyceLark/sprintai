@@ -1,0 +1,15 @@
+{
+  "name": "workspace-browser-tests",
+  "private": true,
+  "sprintflow-browser-tests": true,
+  "description": "Browser tests (Playwright) for this repository. Created by AI SprintFlow.",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0"
+  }
+}

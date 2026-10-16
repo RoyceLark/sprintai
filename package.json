@@ -1,0 +1,13 @@
+{
+  "name": "rich-salon-website",
+  "version": "1.0.0",
+  "description": "Rich Salon marketing website (static HTML/CSS/JS) with services, pricing, gallery and appointment enquiry.",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "start": "echo \"Open index.html in a browser (or run: npx http-server .)\""
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
