@@ -89,6 +89,16 @@
         return;
       }
 
+      if (typeof window.SalonEnquiryStore !== 'undefined') {
+        window.SalonEnquiryStore.addEnquiry({
+          name: fields.name,
+          contact: fields.contact,
+          service: fields.service,
+          date: fields.date,
+          message: form.message ? form.message.value : ''
+        });
+      }
+
       if (successEl) successEl.hidden = false;
       form.reset();
     });
