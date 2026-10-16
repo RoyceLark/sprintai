@@ -1,0 +1,32 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.layout-main {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-lg);
+}
+
+.layout-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.layout-title {
+  font-size: var(--font-size-xl);
+  margin: 0;
+}
+
+.layout-menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .layout-menu-toggle {
+    display: inline-block;
+  }
+}
