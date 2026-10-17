@@ -7,6 +7,14 @@
   --color-border: #e5c9ce;
   --max-width: 1200px;
   --radius: 10px;
+
+  /* Glassmorphism tokens: shared blur, transparency and shadow for glass surfaces */
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  --glass-bg-strong: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-blur: blur(18px) saturate(180%);
+  --glass-shadow: 0 8px 32px rgba(94, 44, 59, 0.18);
+  --glass-radius: 16px;
 }
 
 * {
@@ -18,6 +26,7 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   color: var(--color-text);
   line-height: 1.6;
+  background: linear-gradient(160deg, #fde3e7 0%, #f4e9ec 40%, #e9eef5 100%);
 }
 
 h1, h2, h3 {
@@ -42,6 +51,7 @@ a {
 
 .section {
   padding: 60px 0;
+  scroll-margin-top: 90px; /* keep content clear of the sticky glass header when scrolled into view */
 }
 
 .section--alt {
@@ -77,8 +87,11 @@ a {
 .site-header {
   position: sticky;
   top: 0;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  background: var(--glass-bg-strong);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   z-index: 100;
 }
 
@@ -248,10 +261,22 @@ a {
 .service-card,
 .price-card,
 .testimonial-card {
-  background: var(--color-bg-alt);
-  border-radius: var(--radius);
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--glass-radius);
+  box-shadow: var(--glass-shadow);
   padding: 24px;
   text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover,
+.price-card:hover,
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(94, 44, 59, 0.2);
 }
 
 .service-card__icon {
@@ -316,9 +341,13 @@ a {
 }
 
 .enquiry-form {
-  background: var(--color-bg-alt);
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   padding: 24px;
-  border-radius: var(--radius);
+  border-radius: var(--glass-radius);
 }
 
 .form-group {
@@ -396,8 +425,11 @@ a {
     top: 100%;
     left: 0;
     right: 0;
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    background: var(--glass-bg-strong);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
     display: none;
   }
 
