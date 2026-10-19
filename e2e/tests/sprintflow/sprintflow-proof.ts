@@ -54,6 +54,13 @@ export const test = base.extend<{}>({
   viewport: [{ width: REC.width, height: REC.height }, { option: true }],
   deviceScaleFactor: [REC.scale, { option: true }],
   page: async ({ page }, use, testInfo) => {
+    // Salesforce proof org: sign in with SprintFlow's session first, outside the recording
+    const login = process.env.SPRINTFLOW_SF_LOGIN;
+    if (login) {
+      await page.goto(login);
+      await page.waitForURL((u) => u.pathname.startsWith('/lightning') || u.pathname.endsWith('home.jsp'),
+        { timeout: 90000 }).catch(() => {});
+    }
     const stop = await startRecording(page, testInfo);
     await use(page);
     await stop();
