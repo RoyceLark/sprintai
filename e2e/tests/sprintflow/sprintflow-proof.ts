@@ -54,6 +54,22 @@ export const test = base.extend<{}>({
   viewport: [{ width: REC.width, height: REC.height }, { option: true }],
   deviceScaleFactor: [REC.scale, { option: true }],
   page: async ({ page }, use, testInfo) => {
+    // Salesforce proof org: sign in with SprintFlow's session first, outside the recording
+    const login = process.env.SPRINTFLOW_SF_LOGIN;
+    if (login) {
+      await page.goto(login);
+      await page.waitForURL((u) => u.pathname.startsWith('/lightning') || u.pathname.endsWith('home.jsp'),
+        { timeout: 90000 }).catch(() => {});
+      // Salesforce's own pop-ups and panels (a new-feature tour, the Guidance Center) must not cover the proof
+      await page.waitForTimeout(3000);
+      for (const name of ['Dismiss', 'Close', 'Got It', 'Skip']) {
+        const b = page.getByRole('button', { name, exact: true });
+        for (let i = 0; i < 3 && await b.first().isVisible().catch(() => false); i++) {
+          await b.first().click({ timeout: 2000 }).catch(() => {});
+        }
+      }
+      await page.keyboard.press('Escape').catch(() => {});
+    }
     const stop = await startRecording(page, testInfo);
     await use(page);
     await stop();
@@ -71,22 +87,34 @@ export async function caption(page: Page, text: string): Promise<void> {
       if (t) window.addEventListener('DOMContentLoaded', () => {
         const el = document.createElement('div');
         el.id = '__sprintflow_caption';
-        el.textContent = t;
+        el.setAttribute('aria-hidden', 'true');
+        el.setAttribute('data-caption', t);
         Object.assign(el.style, style);
+        const css = document.createElement('style');
+        css.textContent = '#__sprintflow_caption::after{content:attr(data-caption)}';
+        document.documentElement.appendChild(css);
         document.documentElement.appendChild(el);
       });
     }, CAPTION_STYLE);
   }
+  // The caption is drawn by CSS (::after) from an attribute and hidden from accessibility: it shows in the video, but
+  // the tests' text and role locators never find it - a step titled "Open opportunities: 2" must not make
+  // getByText('Open opportunities: 2') match twice.
   await page.evaluate(([t, style]) => {
     try { sessionStorage.setItem('__sprintflow_caption', t as string); } catch {}
     let el = document.getElementById('__sprintflow_caption');
     if (!el) {
       el = document.createElement('div');
       el.id = '__sprintflow_caption';
+      el.setAttribute('aria-hidden', 'true');
       Object.assign(el.style, style);
+      const css = document.createElement('style');
+      css.textContent = '#__sprintflow_caption::after{content:attr(data-caption)}';
+      (document.head || document.documentElement).appendChild(css);
       (document.body || document.documentElement).appendChild(el);
     }
-    el.textContent = t as string;
+    el.textContent = '';
+    el.setAttribute('data-caption', t as string);
   }, [text, CAPTION_STYLE] as const).catch(() => {});
   await page.waitForTimeout(700);
 }
