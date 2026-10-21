@@ -59,7 +59,7 @@
   <section id="services" class="section section--alt">
     <div class="container">
       <h2 class="section__title">Our Services</h2>
-      <div class="card-grid">
+      <div class="card-grid" id="services-grid">
         <article class="service-card">
           <img class="service-card__icon" src="images/service-hair.svg" alt="Hair styling icon">
           <h3>Hair Styling</h3>
@@ -189,6 +189,7 @@
             <option value="spa">Spa &amp; Massage</option>
             <option value="nails">Nail Care</option>
           </select>
+          <!-- Options above are the default fallback; js/script.js repopulates this list from the service catalog (js/service-store.js) at runtime. -->
           <span class="form-error" id="service-error"></span>
         </div>
         <div class="form-group">
@@ -215,6 +216,7 @@
 
 <script src="js/validation.js"></script>
 <script src="js/enquiry-store.js"></script>
+<script src="js/service-store.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

@@ -61,6 +61,43 @@
     if (input) input.classList.toggle('is-invalid', Boolean(message));
   }
 
+  function escapeHtml(value) {
+    var div = document.createElement('div');
+    div.textContent = value == null ? '' : String(value);
+    return div.innerHTML;
+  }
+
+  function renderServices() {
+    var grid = document.getElementById('services-grid');
+    if (!grid || typeof window.SalonServiceStore === 'undefined') return;
+
+    var services = window.SalonServiceStore.getEnabledServices();
+    grid.innerHTML = services
+      .map(function (service) {
+        return (
+          '<article class="service-card" data-service-id="' + escapeHtml(service.id) + '">' +
+          '<img class="service-card__icon" src="' + escapeHtml(service.icon) + '" alt="' + escapeHtml(service.name) + ' icon">' +
+          '<h3>' + escapeHtml(service.name) + '</h3>' +
+          '<p>' + escapeHtml(service.description) + '</p>' +
+          '</article>'
+        );
+      })
+      .join('');
+  }
+
+  function populateServiceOptions() {
+    var select = document.getElementById('service');
+    if (!select || typeof window.SalonServiceStore === 'undefined') return;
+
+    var services = window.SalonServiceStore.getEnabledServices();
+    var options = ['<option value="">Select a service</option>'].concat(
+      services.map(function (service) {
+        return '<option value="' + escapeHtml(service.id) + '">' + escapeHtml(service.name) + '</option>';
+      })
+    );
+    select.innerHTML = options.join('');
+  }
+
   function setupEnquiryForm() {
     var form = document.getElementById('enquiry-form');
     if (!form || typeof window.SalonValidation === 'undefined') return;
@@ -107,6 +144,8 @@
   document.addEventListener('DOMContentLoaded', function () {
     setupMobileNav();
     setupActiveLinkHighlight();
+    renderServices();
+    populateServiceOptions();
     setupEnquiryForm();
   });
 })();
