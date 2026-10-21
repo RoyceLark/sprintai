@@ -11,6 +11,6 @@
     "jsdom": "^24.0.0"
   },
   "jest": {
-    "testPathIgnorePatterns": ["/node_modules/", "\\.sprintflow-e2e/"]
+    "testPathIgnorePatterns": ["/node_modules/", "\\.sprintflow-e2e/", "/e2e/"]
   }
 }
